@@ -1,20 +1,4 @@
-# weight.i <-
-#   0.01 * matrix(
-#     data = rnorm(layer.size(i) * layer.size(i + 1), sd = 0.5),
-#     nrow = layer.size(i),
-#     ncol = layer.size(i + 1)
-#   )
-# bias.i <- matrix(0, nrow = 1, ncol = layer.size(1))
-
-# input <- matrix(1:4, nrow = 2, ncol = 2)
-# weights <- matrix(1:6, nrow = 2, ncol = 3)
-# bias <- matrix(1:3, nrow = 1, ncol = 3)
-#
-# s1 <- input %*% weights + matrix(rep(bias, each = 2), ncol = 3)
-#
-# s2 <- sweep(input %*% weights, 2, bias, '+')
-# all.equal(s1, s2)
-# max(0, s1)
+## Refer to: https://www.r-bloggers.com/2016/02/r-for-deep-learning-i-build-fully-connected-neural-network-from-scratch/
 
 predict.dnn <- function(model, data) {
   new.data <- data.matrix(data)
